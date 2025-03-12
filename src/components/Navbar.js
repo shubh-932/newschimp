@@ -48,7 +48,7 @@ export default function Navbar() {
               <NavLink className="nav-link" aria-current="page" to="/entertainment">Entertainment</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/health">Health</NavLink>
+              <NavLink className="nav-link" aria-current="page" to="/politics">Politics</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" aria-current="page" to="/science">Science</NavLink>
@@ -57,7 +57,7 @@ export default function Navbar() {
               <NavLink className="nav-link" aria-current="page" to="/sports">Sports</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/technology">Technology</NavLink>
+              <NavLink className="nav-link" aria-current="page" to="/tech">Technology</NavLink>
             </li>
           </ul>
         </div>
