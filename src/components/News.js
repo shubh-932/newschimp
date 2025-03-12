@@ -5,7 +5,9 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Spinner from './Spinner';
 import { LocaleContext } from '../contexts/LocaleContext';
 
-export default function News({ category, apiKey }) {
+export default function News({ category }) {
+
+  const apiKey = process.env.REACT_APP_NEWS_API;
 
   const [locale] = useContext(LocaleContext);
 
@@ -25,7 +27,7 @@ export default function News({ category, apiKey }) {
         setArticles((prev) => prev.concat(data.data));
         setTotalResults(data.meta.found);
       });
-  }, [page, category]);
+  }, [page, category, locale]);
 
   const fetchMoreData = () => {
     setPage(page + 1);
