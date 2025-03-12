@@ -1,0 +1,33 @@
+.nav-link {
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.card {
+    height: 440px;
+}
+
+.card-img-top {
+    height: 190px;
+}
+
+.card-text {
+    height: 72px;
+}
+
+.badge {
+    z-index: 1;
+    left: 50%;
+}
+
+.infinite-scroll-component  {
+    overflow: hidden;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
