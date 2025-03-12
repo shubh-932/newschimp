@@ -27,7 +27,7 @@ export default function News({ category }) {
         setArticles((prev) => prev.concat(data.data));
         setTotalResults(data.meta.found);
       });
-  }, [page, category, locale]);
+  }, [page, category, locale, apiKey]);
 
   const fetchMoreData = () => {
     setPage(page + 1);
