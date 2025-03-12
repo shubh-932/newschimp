@@ -36,7 +36,7 @@ export default function News({ category }) {
   return (
     <div className='container my-3'>
       <h2 className='text-center' style={{marginTop: "80px"}}>Today's Top {category.charAt(0).toUpperCase() + category.slice(1)} Headlines</h2>
-      {loading && <div className='row'>
+      {loading && articles.length === 0 && <div className='row'>
         {
           [
             <div key='1' className="col-md-4"><NewsItemShimmer /></div>,
