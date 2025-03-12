@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import NewsItem from './NewsItem'
 import NewsItemShimmer from './NewsItemShimmer';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Spinner from './Spinner';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 export default function News({ category, apiKey }) {
 
-  document.title = `NewsMonkey - ${category.charAt(0).toUpperCase() + category.slice(1)}`
+  const [locale] = useContext(LocaleContext);
+
+  document.title = `NewsChimp - ${category.charAt(0).toUpperCase() + category.slice(1)}`
 
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
@@ -15,7 +18,7 @@ export default function News({ category, apiKey }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://api.thenewsapi.com/v1/news/top?api_token=${apiKey}&locale=in&categories=${category}&page=${page}`)
+    fetch(`https://api.thenewsapi.com/v1/news/top?api_token=${apiKey}&locale=${locale}&categories=${category}&page=${page}`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);

@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ThemeContext } from '../contexts/ThemeContext';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 export default function Navbar() {
 
-  const [locale, setLocale] = useState('in');
+  const [, setLocale] = useContext(LocaleContext);
   const [darkMode, setDarkMode] = useContext(ThemeContext);
 
   if (darkMode) {
@@ -19,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar fixed-top navbar-expand-lg navbar-${darkMode?'dark':'light'} bg-${darkMode?'dark':'light'}`}>
       <div className="container-fluid">
-        <span className="navbar-brand">NewMonkey</span>
+        <span className="navbar-brand">NewsChimp</span>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -32,7 +33,7 @@ export default function Navbar() {
               <ul className="dropdown-menu">
                 <li><button className="dropdown-item" onClick={() => setLocale('in')}>India</button></li>
                 <li><button className="dropdown-item" onClick={() => setLocale('en')}>USA</button></li>
-                <li><button className="dropdown-item" onClick={() => setLocale('en')}>China</button></li>
+                <li><button className="dropdown-item" onClick={() => setLocale('cn')}>China</button></li>
               </ul>
             </li>
             <li className="nav-item">
